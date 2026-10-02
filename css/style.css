@@ -1,0 +1,358 @@
+:root {
+    --verde-principal: #166534;
+    --verde-escuro: #14532D;
+    --verde-secundario: #15803D;
+    --verde-claro: #DCFCE7;
+    --verde-destaque: #22C55E;
+
+    --fundo: #F8FAF9;
+    --branco: #FFFFFF;
+    --texto: #17211B;
+    --texto-suave: #52625A;
+    --borda: #D1D9D4;
+
+    --sucesso: #15803D;
+    --erro: #B91C1C;
+
+    --fonte-pequena: 0.875rem;
+    --fonte-corpo: 1rem;
+    --fonte-subtitulo: 1.25rem;
+    --fonte-titulo: 1.5rem;
+    --fonte-titulo-principal: 2.25rem;
+
+    --espaco-1: 0.5rem;
+    --espaco-2: 1rem;
+    --espaco-3: 1.5rem;
+    --espaco-4: 2rem;
+    --espaco-5: 3rem;
+    --espaco-6: 4rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--fundo);
+    color: var(--texto);
+    font-size: var(--fonte-corpo);
+}
+
+header {
+    background-color: var(--verde-principal);
+    color: var(--branco);
+    padding: var(--espaco-4);
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--espaco-3);
+    padding: var(--espaco-2);
+    background-color: var(--verde-escuro);
+}
+
+nav a {
+    color: var(--branco);
+    text-decoration: none;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    flex-direction: column;
+    background-color: var(--verde-escuro);
+    padding: var(--espaco-2);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: flex;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--espaco-3);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--espaco-4);
+}
+
+main section {
+    grid-column: span 4;
+    background-color: var(--branco);
+    padding: var(--espaco-3);
+    border: 1px solid var(--borda);
+}
+
+#lista-projetos {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--espaco-3);
+}
+
+#lista-projetos section {
+    grid-column: span 4;
+}
+
+main section#ajudar {
+    grid-column: 1 / -1;
+    background-color: transparent;
+    border: none;
+}
+
+main section:has(form) {
+    grid-column: 4 / span 6;
+}
+
+picture {
+    display: flex;
+    justify-content: center;
+    padding: var(--espaco-3);
+}
+
+picture img {
+    max-width: 100%;
+    height: auto;
+}
+
+main > picture {
+    grid-column: 1 / -1;
+}
+
+h1 {
+    font-size: var(--fonte-titulo-principal);
+}
+
+h2 {
+    font-size: var(--fonte-titulo);
+}
+
+p,
+li,
+label,
+input,
+select,
+button {
+    font-size: var(--fonte-corpo);
+}
+
+form {
+    display: grid;
+    gap: var(--espaco-3);
+}
+
+fieldset {
+    border: 1px solid var(--borda);
+    padding: var(--espaco-3);
+    display: flex;
+    flex-direction: column;
+}
+
+input,
+select,
+button {
+    padding: var(--espaco-1);
+}
+
+input:valid {
+    border: 2px solid var(--sucesso);
+}
+
+input:not(:placeholder-shown):invalid {
+    border: 2px solid var(--erro);
+}
+
+button {
+    background-color: var(--verde-principal);
+    color: var(--branco);
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--verde-escuro);
+}
+
+button:focus {
+    background-color: var(--verde-destaque);
+}
+
+button:active {
+    background-color: var(--verde-secundario);
+}
+
+button:disabled {
+    background-color: var(--borda);
+    color: var(--texto-suave);
+}
+
+footer {
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    text-align: center;
+    padding: var(--espaco-3);
+}
+
+@media (max-width: 480px) {
+
+    main {
+        grid-template-columns: 1fr;
+        padding: var(--espaco-2);
+    }
+
+    main section {
+        grid-column: span 1;
+    }
+
+    #lista-projetos {
+        grid-template-columns: 1fr;
+    }
+
+    #lista-projetos section {
+        grid-column: span 1;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h1 {
+        font-size: var(--fonte-titulo);
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    nav {
+        display: none;
+    }
+
+    #menu-toggle:checked ~ nav {
+        display: flex;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+
+    main {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    main section {
+        grid-column: span 3;
+    }
+
+    #lista-projetos {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    #lista-projetos section {
+        grid-column: span 3;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    main {
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    main section {
+        grid-column: span 4;
+    }
+
+    #lista-projetos {
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    #lista-projetos section {
+        grid-column: span 4;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+    main {
+        max-width: 1100px;
+    }
+}
+
+@media (min-width: 1281px) {
+
+    main {
+        max-width: 1200px;
+    }
+}
+
+.badge {
+    display: inline-block;
+    background-color: var(--verde-claro);
+    color: var(--verde-principal);
+    padding: var(--espaco-1) var(--espaco-2);
+    border: 1px solid var(--verde-principal);
+    border-radius: 999px;
+    font-size: var(--fonte-pequena);
+}
+
+.alerta {
+    background-color: var(--verde-claro);
+    color: var(--verde-principal);
+    border: 1px solid var(--verde-principal);
+    padding: var(--espaco-2);
+    border-radius: 8px;
+    margin-bottom: var(--espaco-3);
+}
+
+.toast {
+    position: fixed;
+    right: var(--espaco-3);
+    bottom: var(--espaco-3);
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    padding: var(--espaco-2);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.alerta.erro {
+    background-color: #FEE2E2;
+    color: var(--erro);
+    border: 1px solid var(--erro);
+}
+
+.campo-erro {
+    border: 2px solid var(--erro);
+}
+
+#historico-cadastros {
+    margin-top: var(--espaco-4);
+}
+
+.cadastro-salvo {
+    background-color: var(--verde-claro);
+    border: 1px solid var(--verde-principal);
+    padding: var(--espaco-2);
+    margin-bottom: var(--espaco-2);
+    border-radius: 8px;
+}
