@@ -69,7 +69,7 @@ npm run preview
 
 ## Publicação
 
-O site está publicado no Netlify:
+O site está em desenvolvimento publicado no Netlify:
 
 https://projetoreconstruir-atividade.netlify.app
 
