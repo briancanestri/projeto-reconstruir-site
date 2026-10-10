@@ -494,3 +494,28 @@ body.modo-escuro footer {
     background-color: #06140C;
     color: #FFFFFF;
 }
+
+#modo-escuro {
+    display: block;
+    width: fit-content;
+    margin: 8px auto 8px 12px;
+    padding: var(--espaco-1) var(--espaco-2);
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#modo-escuro:hover {
+    background-color: var(--verde-principal);
+}
+
+body.modo-escuro #modo-escuro {
+    background-color: #06140C;
+    color: #FFFFFF;
+}
+
+body.modo-escuro #modo-escuro:hover {
+    background-color: #0B2417;
+}
