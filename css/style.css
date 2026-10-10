@@ -60,6 +60,11 @@ nav a {
     text-decoration: none;
 }
 
+nav a:focus {
+    outline: 3px solid var(--verde-destaque);
+    outline-offset: 3px;
+}
+
 .dropdown {
     position: relative;
 }
@@ -84,6 +89,11 @@ nav a {
 
 .menu-icon {
     display: none;
+}
+
+#menu-toggle:focus + .menu-icon {
+    outline: 3px solid var(--verde-destaque);
+    outline-offset: 3px;
 }
 
 main {
@@ -194,6 +204,8 @@ button:hover {
 
 button:focus {
     background-color: var(--verde-destaque);
+    outline: 3px solid var(--verde-escuro);
+    outline-offset: 3px;
 }
 
 button:active {
@@ -202,7 +214,7 @@ button:active {
 
 button:disabled {
     background-color: var(--borda);
-    color: var(--texto-suave);
+    color: var(--texto);
 }
 
 footer {
@@ -355,4 +367,130 @@ footer {
     padding: var(--espaco-2);
     margin-bottom: var(--espaco-2);
     border-radius: 8px;
+}
+
+body.modo-escuro {
+    background-color: #0F1712;
+    color: #F5F7F5;
+}
+
+body.modo-escuro header {
+    background-color: #14532D;
+    color: #FFFFFF;
+}
+
+body.modo-escuro nav {
+    background-color: #0B2417;
+}
+
+body.modo-escuro nav a {
+    color: #FFFFFF;
+}
+
+body.modo-escuro .dropdown-menu {
+    background-color: #0B2417;
+}
+
+body.modo-escuro main section {
+    background-color: #16221A;
+    color: #F5F7F5;
+    border-color: #AAB8AF;
+}
+
+body.modo-escuro main section#ajudar {
+    background-color: transparent;
+}
+
+body.modo-escuro h1,
+body.modo-escuro h2,
+body.modo-escuro p,
+body.modo-escuro li,
+body.modo-escuro label {
+    color: #F5F7F5;
+}
+
+body.modo-escuro input,
+body.modo-escuro select {
+    background-color: #16221A;
+    color: #F5F7F5;
+    border-color: #AAB8AF;
+}
+
+body.modo-escuro button {
+    background-color: #15803D;
+    color: #FFFFFF;
+}
+
+body.modo-escuro button:hover {
+    background-color: #22C55E;
+    color: #17211B;
+}
+
+body.modo-escuro button:focus {
+    background-color: #22C55E;
+    color: #17211B;
+    outline: 3px solid #FFFFFF;
+    outline-offset: 3px;
+}
+
+body.modo-escuro .badge {
+    background-color: #DCFCE7;
+    color: #14532D;
+    border-color: #DCFCE7;
+}
+
+body.modo-escuro .alerta {
+    background-color: #16221A;
+    color: #F5F7F5;
+    border-color: #AAB8AF;
+}
+
+body.modo-escuro .alerta.erro {
+    background-color: #2A1515;
+    color: #FFB4B4;
+    border-color: #FFB4B4;
+}
+
+body.modo-escuro .campo-erro {
+    border-color: #FFB4B4;
+}
+
+body.modo-escuro .toast {
+    background-color: #0B2417;
+    color: #FFFFFF;
+}
+
+body.modo-escuro .cadastro-salvo {
+    background-color: #16221A;
+    color: #F5F7F5;
+    border-color: #AAB8AF;
+}
+
+body.modo-escuro footer {
+    background-color: #0B2417;
+    color: #FFFFFF;
+}
+
+body.modo-escuro button {
+    background-color: #14532D;
+    color: #FFFFFF;
+}
+
+body.modo-escuro button:hover {
+    background-color: #15803D;
+    color: #FFFFFF;
+}
+
+body.modo-escuro header {
+    background-color: #0B2417;
+    color: #FFFFFF;
+}
+
+body.modo-escuro nav {
+    background-color: #06140C;
+}
+
+body.modo-escuro footer {
+    background-color: #06140C;
+    color: #FFFFFF;
 }

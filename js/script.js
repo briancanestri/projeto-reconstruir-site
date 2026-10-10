@@ -55,4 +55,15 @@ links.forEach(function(link) {
     });
 });
 
-configurarFormulario();
+const botaoModoEscuro = document.getElementById("modo-escuro");
+
+if (botaoModoEscuro) {
+    botaoModoEscuro.addEventListener("click", () => {
+        document.body.classList.toggle("modo-escuro");
+
+        const ativo = document.body.classList.contains("modo-escuro");
+
+        botaoModoEscuro.textContent = ativo ? "Modo claro" : "Modo escuro";
+        botaoModoEscuro.setAttribute("aria-pressed", ativo);
+    });
+}
